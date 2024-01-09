@@ -89,14 +89,16 @@ function Order(props) {
 
 function Pizza(props) {
   const { name, ingredients, photoName, price, soldOut } = props.pizzaObj;
-  if (soldOut) return null;
+  // if (soldOut) return null;
   return (
-    <li className="pizza">
+    <li className={`pizza ${soldOut ? "sold-out" : ""}`}>
       <img src={photoName} alt={name} />
       <div>
         <h3>{name}</h3>
         <p>{ingredients}</p>
-        <span>{(parseFloat(price.toFixed(2)) + 3).toFixed(2)}</span>
+        <span>
+          {soldOut ? "SOLD OUT" : (parseFloat(price.toFixed(2)) + 3).toFixed(2)}
+        </span>
       </div>
     </li>
   );
