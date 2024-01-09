@@ -1,29 +1,36 @@
-import logo from "./logo.svg";
 import "./App.css";
 import pizzas from "./pizzas.json";
+import React from "react";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Pizza />
-        <Pizza />
-        <Pizza />
-        <Pizza />
-      </header>
+      <Header />
+      <Menu />
+      <Footer />
     </div>
   );
+}
+
+function Header() {
+  return <h1>Fast React Pizza Co.</h1>;
+}
+
+function Menu() {
+  return (
+    <div className="Menu">
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="footer">{new Date().to}We're currently open!</footer>
+  );
+  // return React.createElement("footer", null, "We're currently open!");
 }
 
 function Pizza() {
