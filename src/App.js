@@ -23,20 +23,27 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="Pepperoni"
+        ingredients="Pepperoni, Tomato Sauce, Mozzarella"
+        price={12.99}
+        photoName="pizzas/pepperoni_pizza.jpg"
+      />
+      <Pizza
+        name="BBQ"
+        ingredients="BBQ, Tomato Sauce, Mozzarella"
+        price={30.21}
+        photoName="pizzas/bbq_chicken_pizza.jpg"
+      />
     </main>
   );
 }
 
 function Footer() {
   const hour = new Date().getHours();
-  console.log(hour);
   const openHour = 12;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
-  console.log(isOpen);
   // if (hour > openHour && hour < closeHour) {
   //   alert("We're Currently open");
   // } else {
@@ -50,13 +57,16 @@ function Footer() {
   // return React.createElement("footer", null, "We're currently open!");
 }
 
-function Pizza() {
-  console.log(pizzas);
+function Pizza(props) {
+  console.log(props);
   return (
-    <div>
-      <img src="pizzas/bbq_chicken_pizza.jpg" alt="Pizza BBQ" />
-      <h3>Pizza</h3>
-      <p>Pepperoni, Tomato Sauce, Mozzarella</p>
+    <div className="pizza">
+      <img src={props.photoName} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>{props.price + 3}</span>
+      </div>
     </div>
   );
 }
