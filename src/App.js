@@ -45,6 +45,15 @@ function Footer() {
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
 
+  if (!isOpen) {
+    return (
+      <div>
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00.
+        </p>
+      </div>
+    );
+  }
   return (
     <footer className="footer">
       {isOpen ? (
@@ -64,7 +73,8 @@ function Footer() {
 }
 
 function Pizza(props) {
-  const { name, ingredients, photoName, price } = props.pizzaObj;
+  const { name, ingredients, photoName, price, soldOut } = props.pizzaObj;
+  if (soldOut) return null;
   return (
     <li className="pizza">
       <img src={photoName} alt={name} />
