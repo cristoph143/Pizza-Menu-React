@@ -3,7 +3,7 @@ import pizzas from "./pizzas.json";
 import React from "react";
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -12,17 +12,21 @@ function App() {
 }
 
 function Header() {
-  return <h1>Fast React Pizza Co.</h1>;
+  return (
+    <header className="header">
+      <h1>Fast React Pizza Co.</h1>
+    </header>
+  );
 }
 
 function Menu() {
   return (
-    <div className="Menu">
+    <main className="menu">
       <h2>Our Menu</h2>
       <Pizza />
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 }
 
@@ -50,8 +54,9 @@ function Pizza() {
   console.log(pizzas);
   return (
     <div>
-      <h2>Pizza</h2>
       <img src="pizzas/bbq_chicken_pizza.jpg" alt="Pizza BBQ" />
+      <h3>Pizza</h3>
+      <p>Pepperoni, Tomato Sauce, Mozzarella</p>
     </div>
   );
 }
