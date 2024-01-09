@@ -29,24 +29,26 @@ function Intro() {
 function SkillList() {
   return (
     <div className="skill-list">
-      {skillsData.map((skill, index) => (
-        <Skill
-          key={index}
-          skill={skill.skill}
-          emoji={skill.emoji}
-          color={skill.color}
-        />
+      {skillsData.map((skill) => (
+        <Skill skill={skill} />
       ))}
     </div>
   );
 }
 
 function Skill(props) {
+  const { skill, level, color } = props.skill;
+  const levelEmoji = {
+    beginner: "👶",
+    intermediate: "👍",
+    advanced: "💪",
+  };
+
   return (
-    <div className="skill" style={{ backgroundColor: props.color }}>
-      <span>{props.skill}</span>
+    <div className="skill" style={{ backgroundColor: color }}>
+      <span>{skill}</span>
       <span role="img" aria-label="emoji">
-        {props.emoji}
+        {levelEmoji[level]}
       </span>
     </div>
   );

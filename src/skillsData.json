@@ -1,32 +1,32 @@
 [
     {
         "skill": "React",
-        "emoji": "💪",
+        "level": "advanced",
         "color": "blue"
     },
     {
         "skill": "JavaScript",
-        "emoji": "💪",
+        "level": "advanced",
         "color": "yellow"
     },
     {
         "skill": "HTML",
-        "emoji": "🌐",
+        "level": "beginner",
         "color": "orange"
     },
     {
         "skill": "CSS",
-        "emoji": "🎨",
+        "level": "intermediate",
         "color": "pink"
     },
     {
         "skill": "Node.js",
-        "emoji": "🚀",
+        "level": "advanced",
         "color": "green"
     },
     {
         "skill": "Python",
-        "emoji": "🐍",
+        "level": "beginner",
         "color": "purple"
     }
 ]
