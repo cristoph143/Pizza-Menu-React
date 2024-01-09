@@ -27,8 +27,21 @@ function Menu() {
 }
 
 function Footer() {
+  const hour = new Date().getHours();
+  console.log(hour);
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+  // if (hour > openHour && hour < closeHour) {
+  //   alert("We're Currently open");
+  // } else {
+  //   alert("We're currently closed");
+  // }
   return (
-    <footer className="footer">{new Date().to}We're currently open!</footer>
+    <footer className="footer">
+      {new Date().toLocaleDateString}We're currently open!
+    </footer>
   );
   // return React.createElement("footer", null, "We're currently open!");
 }
