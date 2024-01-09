@@ -1,5 +1,5 @@
 import "./App.css";
-import pizzas from "./pizzas.json";
+import pizzaData from "./pizzas.json";
 import React from "react";
 function App() {
   return (
@@ -23,18 +23,11 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza
-        name="Pepperoni"
-        ingredients="Pepperoni, Tomato Sauce, Mozzarella"
-        price={12.99}
-        photoName="pizzas/pepperoni_pizza.jpg"
-      />
-      <Pizza
-        name="BBQ"
-        ingredients="BBQ, Tomato Sauce, Mozzarella"
-        price={30.21}
-        photoName="pizzas/bbq_chicken_pizza.jpg"
-      />
+      <ul className="pizzas">
+        {pizzaData.map((pizza) => {
+          return <Pizza pizzaObj={pizza} key={pizza.name} />;
+        })}
+      </ul>
     </main>
   );
 }
@@ -58,16 +51,16 @@ function Footer() {
 }
 
 function Pizza(props) {
-  console.log(props);
+  const { name, ingredients, photoName, price } = props.pizzaObj;
   return (
-    <div className="pizza">
-      <img src={props.photoName} alt={props.name} />
+    <li className="pizza">
+      <img src={photoName} alt={name} />
       <div>
-        <h3>{props.name}</h3>
-        <p>{props.ingredients}</p>
-        <span>{props.price + 3}</span>
+        <h3>{name}</h3>
+        <p>{ingredients}</p>
+        <span>{(parseFloat(price.toFixed(2)) + 3).toFixed(2)}</span>
       </div>
-    </div>
+    </li>
   );
 }
 
