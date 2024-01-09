@@ -1,23 +1,53 @@
-import logo from "./logo.svg";
 import "./App.css";
+import skillsData from "./skillsData.json";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="card">
+      <Avatar />
+      <div className="data">
+        <Intro />
+        <SkillList />
+      </div>
+    </div>
+  );
+}
+
+function Avatar() {
+  return <img className="avatar" src="profile.jpg" alt="Cristopher Bohol" />;
+}
+
+function Intro() {
+  return (
+    <div>
+      <h1>Cristopher Bohol</h1>
+      <p>A computer Science Student at the University of San Jose Recoletos</p>
+    </div>
+  );
+}
+
+function SkillList() {
+  return (
+    <div className="skill-list">
+      {skillsData.map((skill, index) => (
+        <Skill
+          key={index}
+          skill={skill.skill}
+          emoji={skill.emoji}
+          color={skill.color}
+        />
+      ))}
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      <span>{props.skill}</span>
+      <span role="img" aria-label="emoji">
+        {props.emoji}
+      </span>
     </div>
   );
 }

@@ -1,0 +1,32 @@
+[
+    {
+        "skill": "React",
+        "emoji": "💪",
+        "color": "blue"
+    },
+    {
+        "skill": "JavaScript",
+        "emoji": "💪",
+        "color": "yellow"
+    },
+    {
+        "skill": "HTML",
+        "emoji": "🌐",
+        "color": "orange"
+    },
+    {
+        "skill": "CSS",
+        "emoji": "🎨",
+        "color": "pink"
+    },
+    {
+        "skill": "Node.js",
+        "emoji": "🚀",
+        "color": "green"
+    },
+    {
+        "skill": "Python",
+        "emoji": "🐍",
+        "color": "purple"
+    }
+]
